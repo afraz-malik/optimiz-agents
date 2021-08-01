@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/optimiz-agents/static/css/main.a86b23b5.chunk.css",
+    "main.js": "/optimiz-agents/static/js/main.0985697f.chunk.js",
+    "main.js.map": "/optimiz-agents/static/js/main.0985697f.chunk.js.map",
+    "runtime-main.js": "/optimiz-agents/static/js/runtime-main.89a64091.js",
+    "runtime-main.js.map": "/optimiz-agents/static/js/runtime-main.89a64091.js.map",
+    "static/js/2.cef47016.chunk.js": "/optimiz-agents/static/js/2.cef47016.chunk.js",
+    "static/js/2.cef47016.chunk.js.map": "/optimiz-agents/static/js/2.cef47016.chunk.js.map",
+    "index.html": "/optimiz-agents/index.html",
+    "static/css/main.a86b23b5.chunk.css.map": "/optimiz-agents/static/css/main.a86b23b5.chunk.css.map",
+    "static/js/2.cef47016.chunk.js.LICENSE.txt": "/optimiz-agents/static/js/2.cef47016.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89a64091.js",
+    "static/js/2.cef47016.chunk.js",
+    "static/css/main.a86b23b5.chunk.css",
+    "static/js/main.0985697f.chunk.js"
+  ]
+}
