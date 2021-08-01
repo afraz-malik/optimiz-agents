@@ -27,9 +27,40 @@ body {
       width: 20px;
       height: 20px;
       cursor: pointer;
+      display: flex;
+      // left: 10;
       img {
-        width: 100%;
+        position: absolute;
+        width: 20px;
+        height: 20px;
         height: auto;
+        z-index: 6;
+      }
+
+      input {
+        position: absolute;
+        right: 175px;
+        display: none;
+        /* width: 100%; */
+        top: 9px;
+        width: 150px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('search.svg');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+
+        padding: 12px 20px 12px 40px;
+        // padding: 12px 0 0 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        &:focus {
+          width: 250px;
+        }
       }
     }
     .notification {
@@ -37,7 +68,6 @@ body {
       justify-content: space-around;
       position: relative;
       //   width: 70px;
-      cursor: pointer;
 
       height: 35px;
       img {
@@ -50,6 +80,9 @@ body {
         right: 0;
         left: 20px;
       }
+      .notificationimg {
+        cursor: pointer;
+      }
     }
     .anime {
       width: 30px;
@@ -61,6 +94,24 @@ body {
         height: auto;
         border-radius: 50%;
       }
+    }
+  }
+  .notificationBoxmodel {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    height: 226px;
+    width: 250px;
+    box-shadow: 0px 1px 20px rgb(0 0 0 / 10%);
+    background-color: white;
+    h2 {
+      font-family: Poppins;
+      // padding: 10px 0px;
+      text-align: center;
+      height: 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
     }
   }
 }
