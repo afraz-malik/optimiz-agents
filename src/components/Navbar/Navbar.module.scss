@@ -1,0 +1,112 @@
+body {
+  background-color: #f5f6fa;
+}
+.navbar {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 30px;
+  //   background-color: antiquewhite;
+  .leftnav {
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 25px;
+      /* identical to box height */
+    }
+  }
+  .rightnav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    .search {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .notification {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      //   width: 70px;
+      cursor: pointer;
+
+      height: 35px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .dot {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        left: 20px;
+      }
+    }
+    .anime {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1281px) {
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    margin: 10px 10px;
+  }
+}

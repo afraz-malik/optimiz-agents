@@ -1,0 +1,153 @@
+.container {
+  background: #ffffff;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  //   height: 100px;
+  padding: 10px 20px;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  .add {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      h2 {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 13px;
+      }
+    }
+    .button {
+      display: none;
+      button {
+        background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
+        border-radius: 6px;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // display: flex;
+  form {
+    .row {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      justify-content: space-between;
+      .col {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px;
+        input {
+          border: 1px solid #2b3553;
+          box-sizing: border-box;
+          border-radius: 4px;
+          height: 25px;
+        }
+        label {
+          text-align: left;
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+        }
+      }
+    }
+    .buttons {
+      text-align: left;
+      margin: 20px 0px;
+      .addbtn {
+        background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
+        border-radius: 6px;
+        border: 1px solid transparent;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        margin-right: 20px;
+      }
+      .cancel {
+        background: white;
+        border-radius: 6px;
+        border: 1px solid red;
+        padding: 10px 20px;
+        color: red;
+        cursor: pointer;
+        &:hover {
+          background-color: red;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1281px) {
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 481px) and (max-width: 599px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    width: 90%;
+    form {
+      .row {
+        grid-template-columns: 49% 49%;
+      }
+    }
+  }
+}
