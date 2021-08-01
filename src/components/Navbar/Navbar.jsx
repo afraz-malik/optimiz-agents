@@ -9,14 +9,14 @@ const Navbar = () => {
       </div>
       <div className={NavbarCss.rightnav}>
         <div className={NavbarCss.search}>
-          <img alt="" src="/images/search.svg " />
+          <img alt="" src="images/search.svg " />
         </div>
         <div className={NavbarCss.notification}>
-          <img alt="" src="/images/notification.svg" />
-          <img className={NavbarCss.dot} alt="" src="/images/dot.svg" />
+          <img alt="" src="images/notification.svg" />
+          <img className={NavbarCss.dot} alt="" src="images/dot.svg" />
         </div>
         <div className={NavbarCss.anime}>
-          <img alt="" src="/images/anime.png" />
+          <img alt="" src="images/anime.png" />
         </div>
       </div>
     </div>

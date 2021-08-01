@@ -28,8 +28,8 @@ const TableGen = ({ client, index }) => {
       <td>{client.email}</td>
       <td>
         <div className={DatabaseCss.actions}>
-          <img alt="" src="/images/edit.svg" onClick={() => toggleEditBox()} />
-          <img alt="" src="/images/delete.svg" onClick={() => manageDelete()} />
+          <img alt="" src="images/edit.svg" onClick={() => toggleEditBox()} />
+          <img alt="" src="images/delete.svg" onClick={() => manageDelete()} />
           {editBox ? (
             <EditBox
               toggleEditBox={toggleEditBox}

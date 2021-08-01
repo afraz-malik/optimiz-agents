@@ -24,12 +24,12 @@ const Database = ({ clients, title }) => {
           <h3>{title}</h3>
         </div>
         <div className={DatabaseCss.gear}>
-          <img alt="" src="/images/gear.svg" />
+          <img alt="" src="images/gear.svg" />
         </div>
       </div>
       <div className={DatabaseCss.action}>
         <div className={DatabaseCss.search}>
-          <img alt="" src="/images/vector.svg" />
+          <img alt="" src="images/vector.svg" />
           <input
             type="text"
             placeholder="Search for usernames, company..."
@@ -38,11 +38,11 @@ const Database = ({ clients, title }) => {
           />
         </div>
         <div className={DatabaseCss.filter}>
-          <img alt="" src="/images/filter.svg" />
+          <img alt="" src="images/filter.svg" />
           <h5>Filter</h5>
         </div>
         <div className={DatabaseCss.export}>
-          <img alt="" src="/images/export.svg" />
+          <img alt="" src="images/export.svg" />
           <h5>Export</h5>
         </div>
       </div>
