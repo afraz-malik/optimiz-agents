@@ -29,7 +29,7 @@ const Database = ({ clients, title }) => {
       </div>
       <div className={DatabaseCss.action}>
         <div className={DatabaseCss.search}>
-          <img alt="" src="images/vector.svg" />
+          <img alt="" src="images/search2.svg" />
           <input
             type="text"
             placeholder="Search for usernames, company..."
