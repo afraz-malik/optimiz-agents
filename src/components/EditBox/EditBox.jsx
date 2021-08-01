@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import EditBoxCss from './EditBox.module.scss'
+
+// Redux
+import { useDispatch } from 'react-redux'
 import { EditClientAction } from '../../redux/actions'
 
 const EditBox = ({ toggleEditBox, client, index, title }) => {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import DatabaseCss from './Database.module.scss'
-import TableGen from './TableGen'
-import { NumberGen } from './TableGen'
 
-const ClientList = ({ clients, title }) => {
+// Components
+import TableGen, { NumberGen } from './TableGen'
+
+const Database = ({ clients, title }) => {
   const [searchField, setSearchField] = useState({ value: '' })
   const handleChange = (event) => {
     setSearchField({ ...searchField, value: event.target.value })
@@ -74,4 +75,4 @@ const ClientList = ({ clients, title }) => {
   )
 }
 
-export default ClientList
+export default Database

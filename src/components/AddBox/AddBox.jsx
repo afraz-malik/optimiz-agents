@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import AddBoxCss from './AddBox.module.scss'
+
+// Components
 import ClientForm from './ClientForm'
+
 const AddBox = () => {
   const [form, setform] = useState(false)
   const showForm = () => {

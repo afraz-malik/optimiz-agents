@@ -1,5 +1,6 @@
 import React from 'react'
 import NavbarCss from './Navbar.module.scss'
+
 const Navbar = () => {
   return (
     <div className={NavbarCss.navbar}>

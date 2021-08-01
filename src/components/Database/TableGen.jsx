@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import DatabaseCss from './Database.module.scss'
-import EditBox from '../EditBox/EditBox'
-import { DeleteClientAction } from '../../redux/actions'
+// Redux
 import { useDispatch } from 'react-redux'
+import { DeleteClientAction } from '../../redux/actions'
+// Components
+import EditBox from '../EditBox/EditBox'
+
 const TableGen = ({ client, index }) => {
   const dispatch = useDispatch()
   const [editBox, setEditBox] = useState(false)
