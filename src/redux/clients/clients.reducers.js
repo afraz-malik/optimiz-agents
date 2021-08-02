@@ -1,4 +1,4 @@
-import { editClent, deleteClient } from './stateHandlers'
+import { editClent, deleteClient } from './clients.stateHandlers'
 
 const initialUserState = {
   clients: [

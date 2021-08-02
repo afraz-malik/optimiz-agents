@@ -73,15 +73,13 @@ body {
       img {
         width: 100%;
         height: auto;
+        cursor: pointer;
       }
       .dot {
         position: absolute;
         top: -5px;
         right: 0;
         left: 20px;
-      }
-      .notificationimg {
-        cursor: pointer;
       }
     }
     .anime {

@@ -4,24 +4,26 @@ import DatabaseCss from './Database.module.scss'
 // Components
 import TableGen, { NumberGen } from './TableGen'
 
-const Database = ({ clients, title }) => {
+const Database = ({ data, title }) => {
   const [searchField, setSearchField] = useState({ value: '' })
   const handleChange = (event) => {
     setSearchField({ ...searchField, value: event.target.value })
   }
-  const filteredClients = clients.filter((client) => {
+
+  const filteredData = data.filter((data) => {
     return (
-      client.fname.toLowerCase().includes(searchField.value.toLowerCase()) ||
-      client.lname.toLowerCase().includes(searchField.value.toLowerCase()) ||
-      client.company.toLowerCase().includes(searchField.value.toLowerCase()) ||
-      client.email.toLowerCase().includes(searchField.value.toLowerCase())
+      data.fname.toLowerCase().includes(searchField.value.toLowerCase()) ||
+      data.lname.toLowerCase().includes(searchField.value.toLowerCase()) ||
+      // data.company.toLowerCase().includes(searchField.value.toLowerCase()) ||
+      data.email.toLowerCase().includes(searchField.value.toLowerCase())
     )
   })
+
   return (
     <div className={DatabaseCss.database}>
       <div className={DatabaseCss.top}>
         <div className={DatabaseCss.text}>
-          <h3>{title}</h3>
+          <h3>List of {title}s</h3>
         </div>
         <div className={DatabaseCss.gear}>
           <img alt="" src="images/gear.svg" />
@@ -58,8 +60,8 @@ const Database = ({ clients, title }) => {
             </tr>
           </thead>
           <tbody>
-            {filteredClients.map((client, j) => (
-              <TableGen key={j} index={j} client={client} />
+            {filteredData.map((data, j) => (
+              <TableGen key={j} title={title} index={j} data={data} />
             ))}
           </tbody>
         </table>

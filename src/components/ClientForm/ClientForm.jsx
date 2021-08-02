@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import AddBoxCss from './AddBox.module.scss'
+import ClientFormCss from './ClientForm.module.scss'
 
 // Redux
 import { useDispatch } from 'react-redux'
-import { AddClientAction } from '../../redux/actions'
+import { AddClientAction } from '../../redux/clients/clients.actions'
 // Notification
 import toast from 'cogo-toast'
 
@@ -38,9 +38,9 @@ const ClientForm = ({ showForm }) => {
     })
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={AddBoxCss.row}>
-        <div className={AddBoxCss.col}>
+    <form className={ClientFormCss.form} onSubmit={handleSubmit}>
+      <div className={ClientFormCss.row}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="fname">First Name</label>
           <input
             type="text"
@@ -49,7 +49,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="lname">Last Name</label>
           <input
             type="text"
@@ -58,7 +58,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="email">Email address</label>
           <input
             type="email"
@@ -67,7 +67,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="company">Company</label>
           <input
             type="text"
@@ -76,7 +76,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="phone">Phone number</label>
           <input
             type="text"
@@ -85,7 +85,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="userRoles">User Roles</label>
           <input
             type="text"
@@ -95,7 +95,7 @@ const ClientForm = ({ showForm }) => {
             onChange={handleChange}
           />
         </div>
-        <div className={AddBoxCss.col}>
+        <div className={ClientFormCss.col}>
           <label htmlFor="password">Passwords</label>
           <input
             type="password"
@@ -106,13 +106,13 @@ const ClientForm = ({ showForm }) => {
           />
         </div>
       </div>
-      <div className={AddBoxCss.buttons}>
-        <button className={AddBoxCss.addbtn} type="submit">
+      <div className={ClientFormCss.buttons}>
+        <button className={ClientFormCss.addbtn} type="submit">
           {' '}
           Add Client
         </button>
         <button
-          className={AddBoxCss.cancel}
+          className={ClientFormCss.cancel}
           type="button"
           onClick={() => showForm()}
         >

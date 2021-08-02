@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import DatabaseCss from './Database.module.scss'
 // Redux
 import { useDispatch } from 'react-redux'
-import { DeleteClientAction } from '../../redux/actions'
+import { DeleteClientAction } from '../../redux/clients/clients.actions'
+import { DeleteUserAction } from '../../redux/users/users.actions'
 // Components
 import EditBox from '../EditBox/EditBox'
 
-const TableGen = ({ client, index }) => {
+const TableGen = ({ data, title, index }) => {
   const dispatch = useDispatch()
   const [editBox, setEditBox] = useState(false)
   const toggleEditBox = () => {
@@ -15,17 +16,19 @@ const TableGen = ({ client, index }) => {
   const manageDelete = () => {
     const result = window.confirm('Are you sure you want to delete?')
     if (result) {
-      dispatch(DeleteClientAction(index))
+      title === 'Client'
+        ? dispatch(DeleteClientAction(index))
+        : dispatch(DeleteUserAction(index))
     }
   }
   return (
     <tr>
       <td>
-        {client.fname} {client.lname}
+        {data.fname} {data.lname}
       </td>
-      <td>{client.company}</td>
-      <td>{client.phone}</td>
-      <td>{client.email}</td>
+      <td>{data.company}</td>
+      <td>{data.phone}</td>
+      <td>{data.email}</td>
       <td>
         <div className={DatabaseCss.actions}>
           <img alt="" src="images/edit.svg" onClick={() => toggleEditBox()} />
@@ -33,9 +36,9 @@ const TableGen = ({ client, index }) => {
           {editBox ? (
             <EditBox
               toggleEditBox={toggleEditBox}
-              client={client}
+              data={data}
               index={index}
-              title="Edit Client Detail"
+              title={title}
             />
           ) : null}
         </div>

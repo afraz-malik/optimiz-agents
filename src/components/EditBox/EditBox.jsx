@@ -3,24 +3,27 @@ import EditBoxCss from './EditBox.module.scss'
 
 // Redux
 import { useDispatch } from 'react-redux'
-import { EditClientAction } from '../../redux/actions'
+import { EditClientAction } from '../../redux/clients/clients.actions'
+import { EditUserAction } from '../../redux/users/users.actions'
 
-const EditBox = ({ toggleEditBox, client, index, title }) => {
+const EditBox = ({ toggleEditBox, data, index, title }) => {
   const dispatch = useDispatch()
-  const [newClient, setNewClient] = useState(client)
+  const [newData, setNewData] = useState(data)
   const handleChange = (event) => {
-    setNewClient({ ...newClient, [event.target.name]: event.target.value })
+    setNewData({ ...newData, [event.target.name]: event.target.value })
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(EditClientAction({ newClient, index }))
+    title === 'Client'
+      ? dispatch(EditClientAction({ newClient: newData, index }))
+      : dispatch(EditUserAction({ newUser: newData, index }))
     toggleEditBox()
   }
   return (
     <div className={EditBoxCss.outerbox}>
       <div className={EditBoxCss.box}>
         <div className={EditBoxCss.head}>
-          <h2>{title}</h2>
+          <h2>Edit {title} details</h2>
         </div>
         <div className={EditBoxCss.body}>
           <form onSubmit={handleSubmit}>
@@ -29,7 +32,7 @@ const EditBox = ({ toggleEditBox, client, index, title }) => {
               type="text"
               name="fname"
               onChange={handleChange}
-              value={newClient.fname}
+              value={newData.fname}
             />
 
             <label>Last Name</label>
@@ -37,7 +40,7 @@ const EditBox = ({ toggleEditBox, client, index, title }) => {
               type="text"
               name="lname"
               onChange={handleChange}
-              value={newClient.lname}
+              value={newData.lname}
             />
 
             <label>Company</label>
@@ -45,7 +48,7 @@ const EditBox = ({ toggleEditBox, client, index, title }) => {
               type="text"
               name="company"
               onChange={handleChange}
-              value={newClient.company}
+              value={newData.company}
             />
 
             <label>Email</label>
@@ -53,15 +56,15 @@ const EditBox = ({ toggleEditBox, client, index, title }) => {
               type="text"
               name="email"
               onChange={handleChange}
-              value={newClient.email}
+              value={newData.email}
             />
 
             <label>User Role</label>
             <input
               type="text"
-              name="userRoles"
+              name="roles"
               onChange={handleChange}
-              value={newClient.userRoles}
+              value={newData.roles}
             />
             <div className={EditBoxCss.buttons}>
               <button className={EditBoxCss.addbtn} type="submit">

@@ -65,9 +65,13 @@ const Navbar = () => {
             alt=""
             src="images/notification.svg"
             onClick={() => toggleNav('notification')}
-            onBlur={() => toggleNav('notification')}
           />
-          <img className={NavbarCss.dot} alt="" src="images/dot.svg" />
+          <img
+            className={NavbarCss.dot}
+            alt=""
+            src="images/dot.svg"
+            onClick={() => toggleNav('notification')}
+          />
           <div
             className={NavbarCss.notificationBoxmodel}
             style={

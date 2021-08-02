@@ -9,20 +9,20 @@ import Database from '../../components/Database/Database'
 import Footer from '../../components/Footer/Footer'
 
 const mapStateToProps = (state) => ({
-  data: state.clientReducer.clients,
+  data: state.userReducer.users,
 })
 
-const ClientWhite = ({ data }) => {
+const UserManagement = ({ data }) => {
   return (
     <>
       <div style={{ minHeight: '100vh' }}>
         <Navbar />
-        <AddBox title="Client" />
-        <Database data={data} title="Client" />
+        <AddBox title="User" />
+        <Database data={data} title="User" />
       </div>
       <Footer />
     </>
   )
 }
 
-export default connect(mapStateToProps)(ClientWhite)
+export default connect(mapStateToProps)(UserManagement)
