@@ -1,6 +1,6 @@
 .linssssssssss {
   position: absolute;
-  top: 8%;
+  top: 0;
   left: 0;
   background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
   border-radius: 6px;
@@ -10,7 +10,7 @@
 }
 .linssssssssss1 {
   position: absolute;
-  top: 8%;
+  top: 0;
   left: 100px;
   background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
   border-radius: 6px;
@@ -21,8 +21,19 @@
 }
 .linssssssssss2 {
   position: absolute;
-  top: 8%;
+  top: 0;
   left: 200px;
+  background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
+  border-radius: 6px;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+.linssssssssss3 {
+  position: absolute;
+  top: 0;
+  left: 300px;
   background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
   border-radius: 6px;
   border: none;
@@ -56,7 +67,7 @@
 }
 
 .App-link {
-  color: rgb(112, 76, 182);
+  color: rgb(112, 76, 10);
 }
 
 @keyframes App-logo-float {

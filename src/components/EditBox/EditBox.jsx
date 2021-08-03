@@ -60,12 +60,18 @@ const EditBox = ({ toggleEditBox, data, index, title }) => {
             />
 
             <label>User Role</label>
-            <input
+            <select name='roles' value={newData.roles} onChange={handleChange}>
+              <option disabled defaultValue selected  style={{display: 'none'}} > </option>
+              <option value='Admin'>Admin</option>
+              <option value='User'>User</option>  
+              <option value='ThirdPary'>ThirdPary</option>
+            </select>
+            {/* <input
               type="text"
               name="roles"
               onChange={handleChange}
               value={newData.roles}
-            />
+            /> */}
             <div className={EditBoxCss.buttons}>
               <button className={EditBoxCss.addbtn} type="submit">
                 {' '}

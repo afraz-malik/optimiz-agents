@@ -86,14 +86,20 @@ const ClientForm = ({ showForm }) => {
           />
         </div>
         <div className={ClientFormCss.col}>
-          <label htmlFor="userRoles">User Roles</label>
-          <input
+          <label htmlFor="roles">User Roles</label>
+          <select name='roles' value={client.roles} onChange={handleChange}>
+            <option disabled defaultValue selected  style={{display: 'none'}} > </option>
+            <option value='Admin'>Admin</option>
+            <option value='User'>User</option>  
+            <option value='ThirdPary'>ThirdPary</option>
+          </select>
+          {/* <input
             type="text"
             name="userRoles"
             autoComplete="current-password"
             value={client.userRoles}
             onChange={handleChange}
-          />
+          /> */}
         </div>
         <div className={ClientFormCss.col}>
           <label htmlFor="password">Passwords</label>

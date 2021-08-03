@@ -97,13 +97,19 @@ const UserForm = ({ showForm }) => {
         </div>
         <div className={UserFormCss.col}>
           <label htmlFor="roles">User Roles</label>
-          <input
+          <select name='roles' value={client.roles} onChange={handleChange}>
+            <option disabled defaultValue selected  style={{display: 'none'}} > </option>
+            <option value='Admin'>Admin</option>
+            <option value='User'>User</option>  
+            <option value='ThirdPary'>ThirdPary</option>
+          </select>
+          {/* <input
             type="text"
             name="roles"
             autoComplete="off"
             value={client.roles}
             onChange={handleChange}
-          />
+          /> */}
         </div>
       </div>
       <div className={UserFormCss.buttons}>

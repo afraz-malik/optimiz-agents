@@ -1,27 +1,40 @@
-.database {
-  background: #ffffff;
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  width: 70%;
-  padding: 10px 20px;
-  margin: auto;
-  margin-top: 20px;
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    .text {
-      h3 {
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        margin: 0;
+.container {
+    background: #ffffff;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    //   height: 100px;
+    padding: 10px 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+  .add {
+      display: flex;
+      // flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .text {
+        h2 {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 13px;
+        }
+      }
+      .button {
+        // display: none; 
+        button {
+          background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
+          border-radius: 6px;
+          border: none;
+          padding: 10px 20px;
+          color: white;
+          cursor: pointer;
+        }
       }
     }
-  }
   .action {
+    margin-top: 20px;
     background: #f5f7f8;
     border-radius: 8px;
     padding: 10px 15px;
@@ -73,6 +86,7 @@
       width: 100%;
       border-collapse: collapse;
       min-width: 700px;
+
       tr:hover {
         background: #f4f4f4;
         border-radius: 7px;
@@ -82,9 +96,14 @@
         padding: 5px 0px;
         font-style: normal;
         font-weight: bold;
+        border-collapse: collapse;
         font-size: 12px;
-        border-bottom: 1px solid black;
+        height: 40px;
+        // border-bottom: 1px solid black;
+        color: #101010;
         text-align: center;
+        background: rgba(29, 140, 248, 0.06);
+        border-radius: 8px;
       }
       td {
         font-family: Poppins;
@@ -128,74 +147,6 @@
       &:hover {
         color: #e14eca;
       }
-    }
-  }
-}
-
-@media (min-width: 1281px) {
-}
-
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-}
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .database {
-    width: 80%;
-  }
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .database {
-    width: 80%;
-  }
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 600px) and (max-width: 767px) {
-  .database {
-    width: 90%;
-    .action {
-      grid-template-columns: 67% 15% 15%;
-    }
-  }
-}
-@media (min-width: 481px) and (max-width: 599px) {
-  .database {
-    width: 90%;
-    .action {
-      grid-template-columns: 63% 17% 17%;
-    }
-  }
-}
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .database {
-    width: 90%;
-    .action {
-      grid-template-columns: 55% 22% 22%;
     }
   }
 }

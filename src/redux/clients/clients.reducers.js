@@ -8,7 +8,7 @@ const initialUserState = {
       email: 'jessica.hansaon@example.com',
       company: 'Binford Ltd.',
       phone: '(505)555-0125',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
     {
@@ -17,7 +17,7 @@ const initialUserState = {
       email: 'michelle.rivera@example.com',
       company: 'Biffco Enterprises Ltd.',
       phone: '(217) 555-0113',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
     {
@@ -26,7 +26,7 @@ const initialUserState = {
       email: 'dolores.chambers@example.com',
       company: 'Acme Co.',
       phone: '(208) 555-0112',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
   ],

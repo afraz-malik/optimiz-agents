@@ -7,7 +7,7 @@ const initialUserState = {
       lname: 'Howard',
       email: 'jessica.hansaon@example.com',
       phone: '(505)555-0125',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
     {
@@ -15,7 +15,7 @@ const initialUserState = {
       lname: 'Webb',
       email: 'michelle.rivera@example.com',
       phone: '(217) 555-0113',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
     {
@@ -23,7 +23,7 @@ const initialUserState = {
       lname: 'Jones',
       email: 'dolores.chambers@example.com',
       phone: '(208) 555-0112',
-      userRoles: 'Admin',
+      roles: 'Admin',
       password: '',
     },
   ],

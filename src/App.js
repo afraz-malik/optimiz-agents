@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 // Pages
 import ClientWhite from './pages/ClientWhite/ClientWhite'
 import UserManagement from './pages/UserManagement/UserManagement'
+import RoleList from './components/RoleList/RoleList'
 
 function App() {
   return (
@@ -17,9 +18,13 @@ function App() {
         <Link className="linssssssssss2" to="/users">
           Users
         </Link>
+        <Link className="linssssssssss3" to="/role-list">
+          Role List
+        </Link>
         <Switch>
           <Route exact path="/clients" component={ClientWhite} />
           <Route exact path="/users" component={UserManagement} />
+          <Route exact path="/role-list" component={RoleList} />
         </Switch>
       </Router>
     </div>

@@ -65,6 +65,7 @@ const Database = ({ data, title }) => {
             ))}
           </tbody>
         </table>
+      </div>
         <div className={DatabaseCss.pages}>
           <div className={DatabaseCss.back}>&lt;</div>
           {[...Array(3)].map((i, j) => (
@@ -72,7 +73,6 @@ const Database = ({ data, title }) => {
           ))}
           <div className={DatabaseCss.front}>&gt;</div>
         </div>
-      </div>
     </div>
   )
 }
