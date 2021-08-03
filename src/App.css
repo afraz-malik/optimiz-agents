@@ -1,51 +1,9 @@
-.linssssssssss {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
-  border-radius: 6px;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-}
-.linssssssssss1 {
-  position: absolute;
-  top: 0;
-  left: 100px;
-  background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
-  border-radius: 6px;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  cursor: pointer;
-}
-.linssssssssss2 {
-  position: absolute;
-  top: 0;
-  left: 200px;
-  background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
-  border-radius: 6px;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  cursor: pointer;
-}
-.linssssssssss3 {
-  position: absolute;
-  top: 0;
-  left: 300px;
-  background: linear-gradient(360deg, #ba54f5 0%, #e14eca 100%);
-  border-radius: 6px;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  cursor: pointer;
-}
-
 .App {
   text-align: center;
 }
-
+.a {
+  margin-right: 10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
