@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 // components
 import Navbar from '../../components/Navbar/Navbar'
 import AddBox from '../../components/AddBox/AddBox'
-import Database from '../../components/Database/Database'
+import DataBox from '../../components/DataBox/DataBox'
 import Footer from '../../components/Footer/Footer'
 
 const mapStateToProps = (state) => ({
@@ -18,7 +18,7 @@ const UserManagement = ({ data }) => {
       <div style={{ minHeight: '100vh' }}>
         <Navbar />
         <AddBox title="User" />
-        <Database data={data} title="User" />
+        <DataBox data={data} title="User" />
       </div>
       <Footer />
     </>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import DatabaseCss from './Database.module.scss'
+import DataListCss from './DataList.module.scss'
+
 // Redux
 import { useDispatch } from 'react-redux'
 import { DeleteClientAction } from '../../redux/clients/clients.actions'
@@ -7,7 +8,7 @@ import { DeleteUserAction } from '../../redux/users/users.actions'
 // Components
 import EditBox from '../EditBox/EditBox'
 
-const TableGen = ({ data, title, index }) => {
+const DataListGen = ({ data, title, index }) => {
   const dispatch = useDispatch()
   const [editBox, setEditBox] = useState(false)
   const toggleEditBox = () => {
@@ -30,7 +31,7 @@ const TableGen = ({ data, title, index }) => {
       <td>{data.phone}</td>
       <td>{data.email}</td>
       <td>
-        <div className={DatabaseCss.actions}>
+        <div className={DataListCss.actions}>
           <img alt="" src="images/edit.svg" onClick={() => toggleEditBox()} />
           <img alt="" src="images/delete.svg" onClick={() => manageDelete()} />
           {editBox ? (
@@ -46,7 +47,5 @@ const TableGen = ({ data, title, index }) => {
     </tr>
   )
 }
-export const NumberGen = ({ counter }) => {
-  return <div className={DatabaseCss.numbers}>{counter}</div>
-}
-export default TableGen
+
+export default DataListGen

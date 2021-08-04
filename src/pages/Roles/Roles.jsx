@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import RoleList from '../../components/RoleList/RoleList'
 import AddRoleBox from '../../components/AddRoleBox/AddRoleBox'
 import Footer from '../../components/Footer/Footer'
-const UserManagement = () => {
+const Roles = () => {
   const [state, setState] = useState(false)
   const toggleState = () => {
     setState(!state)
@@ -26,4 +26,4 @@ const UserManagement = () => {
   )
 }
 
-export default UserManagement
+export default Roles
