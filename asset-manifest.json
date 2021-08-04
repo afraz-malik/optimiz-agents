@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/optimiz-agents/static/css/main.2287b4c5.chunk.css",
-    "main.js": "/optimiz-agents/static/js/main.a2c89c9b.chunk.js",
-    "main.js.map": "/optimiz-agents/static/js/main.a2c89c9b.chunk.js.map",
+    "main.css": "/optimiz-agents/static/css/main.a473a610.chunk.css",
+    "main.js": "/optimiz-agents/static/js/main.42161aa1.chunk.js",
+    "main.js.map": "/optimiz-agents/static/js/main.42161aa1.chunk.js.map",
     "runtime-main.js": "/optimiz-agents/static/js/runtime-main.89a64091.js",
     "runtime-main.js.map": "/optimiz-agents/static/js/runtime-main.89a64091.js.map",
     "static/js/2.c133f43f.chunk.js": "/optimiz-agents/static/js/2.c133f43f.chunk.js",
     "static/js/2.c133f43f.chunk.js.map": "/optimiz-agents/static/js/2.c133f43f.chunk.js.map",
     "index.html": "/optimiz-agents/index.html",
-    "static/css/main.2287b4c5.chunk.css.map": "/optimiz-agents/static/css/main.2287b4c5.chunk.css.map",
+    "static/css/main.a473a610.chunk.css.map": "/optimiz-agents/static/css/main.a473a610.chunk.css.map",
     "static/js/2.c133f43f.chunk.js.LICENSE.txt": "/optimiz-agents/static/js/2.c133f43f.chunk.js.LICENSE.txt",
-    "static/media/Navbar.module.scss": "/optimiz-agents/static/media/search.8719af53.svg"
+    "static/media/Navbar.module.scss": "/optimiz-agents/static/media/search.f781a674.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.89a64091.js",
     "static/js/2.c133f43f.chunk.js",
-    "static/css/main.2287b4c5.chunk.css",
-    "static/js/main.a2c89c9b.chunk.js"
+    "static/css/main.a473a610.chunk.css",
+    "static/js/main.42161aa1.chunk.js"
   ]
 }
