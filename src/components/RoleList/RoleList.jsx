@@ -12,7 +12,9 @@ const RoleList = ({ toggleState, roles }) => {
   const handleChange = (event) => {
     setSearchField({ ...searchField, value: event.target.value })
   }
-  console.log(roles)
+  const filteredRoles = roles.filter((role) =>
+    role.roleName.toLowerCase().includes(searchField.value.toLowerCase())
+  )
   return (
     <div className={RoleListCss.container}>
       <div className={RoleListCss.add}>
@@ -28,7 +30,7 @@ const RoleList = ({ toggleState, roles }) => {
           <img alt="" src="images/search2.svg" />
           <input
             type="text"
-            placeholder="Search for usernames, company..."
+            placeholder="Search for named role..."
             onChange={handleChange}
             value={searchField.value}
           />
@@ -53,7 +55,7 @@ const RoleList = ({ toggleState, roles }) => {
             </tr>
           </thead>
           <tbody>
-            {roles.map((role, j) => (
+            {filteredRoles.map((role, j) => (
               <RoleListGen key={j} index={j} role={role} />
             ))}
           </tbody>
