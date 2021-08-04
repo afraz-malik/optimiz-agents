@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 
 import RoleList from '../../components/RoleList/RoleList'
-import AddRole from '../../components/AddRole/AddRole'
+import AddRoleBox from '../../components/AddRoleBox/AddRoleBox'
 import Footer from '../../components/Footer/Footer'
 const UserManagement = () => {
   const [state, setState] = useState(false)
@@ -16,7 +16,7 @@ const UserManagement = () => {
       <div style={{ minHeight: '100vh' }}>
         <Navbar />
         {state ? (
-          <AddRole toggleState={toggleState} />
+          <AddRoleBox toggleState={toggleState} />
         ) : (
           <RoleList toggleState={toggleState} />
         )}

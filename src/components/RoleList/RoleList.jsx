@@ -12,6 +12,7 @@ const RoleList = ({ toggleState, roles }) => {
   const handleChange = (event) => {
     setSearchField({ ...searchField, value: event.target.value })
   }
+  console.log(roles)
   return (
     <div className={RoleListCss.container}>
       <div className={RoleListCss.add}>

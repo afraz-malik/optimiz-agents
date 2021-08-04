@@ -4,7 +4,7 @@ import RoleListCss from './RoleList.module.scss'
 import { useDispatch } from 'react-redux'
 import { DeleteRoleAction } from '../../redux/roles/roles.actions'
 // Components
-import RoleListEdit from './RoleListEdit'
+import EditRoleBox from '../EditRoleBox/EditRoleBox'
 
 const RoleListGen = ({ role, index }) => {
   const { roleName, roles } = role
@@ -47,7 +47,7 @@ const RoleListGen = ({ role, index }) => {
           <img alt="" src="images/edit.svg" onClick={() => toggleEditBox()} />
           <img alt="" src="images/delete.svg" onClick={() => manageDelete()} />
           {editBox ? (
-            <RoleListEdit
+            <EditRoleBox
               toggleEditBox={toggleEditBox}
               role={role}
               index={index}

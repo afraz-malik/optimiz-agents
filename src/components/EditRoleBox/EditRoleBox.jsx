@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import RoleListEditCss from './RoleListEdit.module.scss'
+import EditRoleBoxCss from './EditRoleBox.module.scss'
 import Switch from '@material-ui/core/Switch'
 
 // Redux
 import { useDispatch } from 'react-redux'
 import { EditRoleAction } from '../../redux/roles/roles.actions'
 
-const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
+const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
   const { roleName, roles } = role
   const dispatch = useDispatch()
   const [newData, setNewData] = useState(data)
@@ -50,12 +50,12 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
     toggleEditBox()
   }
   return (
-    <div className={RoleListEditCss.outerbox}>
-      <div className={RoleListEditCss.box}>
-        <div className={RoleListEditCss.head}>
+    <div className={EditRoleBoxCss.outerbox}>
+      <div className={EditRoleBoxCss.box}>
+        <div className={EditRoleBoxCss.head}>
           <h2>Edit Roles</h2>
         </div>
-        <div className={RoleListEditCss.body}>
+        <div className={EditRoleBoxCss.body}>
           <form onSubmit={handleSubmit}>
             <label>Role Name</label>
             <input
@@ -64,10 +64,10 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
               onChange={handleChange}
               value={roleName}
             />
-            <div className={RoleListEditCss.row}>
-              <div className={RoleListEditCss.boxmodel}>
+            <div className={EditRoleBoxCss.row}>
+              <div className={EditRoleBoxCss.boxmodel}>
                 <div
-                  className={RoleListEditCss.boxmodel_top}
+                  className={EditRoleBoxCss.boxmodel_top}
                   onClick={() => handleBox('admin')}
                 >
                   <h3>Admin Specific</h3>
@@ -78,10 +78,10 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                   />
                 </div>
                 <div
-                  className={RoleListEditCss.boxmodel_body}
+                  className={EditRoleBoxCss.boxmodel_body}
                   style={box.admin ? { display: 'block' } : { display: 'none' }}
                 >
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Manage Accounts</h5>
                     <Switch
                       //   style={{ color: '#E14ECA' }}
@@ -91,7 +91,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Manage Account Users</h5>
                     <Switch
                       checked={toggle.manageAccountsUser}
@@ -100,7 +100,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Account Manager</h5>
                     <Switch
                       checked={toggle.accountManager}
@@ -109,7 +109,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Create Users</h5>
                     <Switch
                       checked={toggle.createUsers}
@@ -118,7 +118,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Delete Users</h5>
                     <Switch
                       checked={toggle.deleteUsers}
@@ -129,9 +129,9 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                   </div>
                 </div>
               </div>
-              <div className={RoleListEditCss.boxmodel}>
+              <div className={EditRoleBoxCss.boxmodel}>
                 <div
-                  className={RoleListEditCss.boxmodel_top}
+                  className={EditRoleBoxCss.boxmodel_top}
                   onClick={() => handleBox('page')}
                 >
                   <h3>Page Specific</h3>
@@ -142,10 +142,10 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                   />
                 </div>
                 <div
-                  className={RoleListEditCss.boxmodel_body}
+                  className={EditRoleBoxCss.boxmodel_body}
                   style={box.page ? { display: 'block' } : { display: 'none' }}
                 >
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Performance</h5>
                     <Switch
                       //   style={{ color: '#E14ECA' }}
@@ -155,7 +155,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Analytics</h5>
                     <Switch
                       checked={toggle.analytics}
@@ -164,7 +164,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Compaigns</h5>
                     <Switch
                       checked={toggle.compaigns}
@@ -173,7 +173,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Clients</h5>
                     <Switch
                       checked={toggle.clients}
@@ -182,7 +182,7 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                       inputProps={{ 'aria-label': 'secondary checkbox' }}
                     />
                   </div>
-                  <div className={RoleListEditCss.switchBox}>
+                  <div className={EditRoleBoxCss.switchBox}>
                     <h5>Publishers</h5>
                     <Switch
                       checked={toggle.publishers}
@@ -193,9 +193,9 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                   </div>
                 </div>
               </div>
-              <div className={RoleListEditCss.boxmodel}>
+              <div className={EditRoleBoxCss.boxmodel}>
                 <div
-                  className={RoleListEditCss.boxmodel_top}
+                  className={EditRoleBoxCss.boxmodel_top}
                   onClick={() => handleBox('client')}
                 >
                   <h3>Client Specific</h3>
@@ -206,9 +206,9 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                   />
                 </div>
               </div>
-              <div className={RoleListEditCss.boxmodel}>
+              <div className={EditRoleBoxCss.boxmodel}>
                 <div
-                  className={RoleListEditCss.boxmodel_top}
+                  className={EditRoleBoxCss.boxmodel_top}
                   onClick={() => handleBox('publisher')}
                 >
                   <h3>Publishers</h3>
@@ -222,14 +222,14 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
                 </div>
               </div>
             </div>
-            <div className={RoleListEditCss.buttons}>
-              <button className={RoleListEditCss.addbtn} type="submit">
+            <div className={EditRoleBoxCss.buttons}>
+              <button className={EditRoleBoxCss.addbtn} type="submit">
                 {' '}
                 Update
               </button>
               <button
                 type="button"
-                className={RoleListEditCss.cancel}
+                className={EditRoleBoxCss.cancel}
                 onClick={() => toggleEditBox()}
               >
                 Cancel
@@ -242,4 +242,4 @@ const RoleListEdit = ({ toggleEditBox, role, data, index }) => {
   )
 }
 
-export default RoleListEdit
+export default EditRoleBox

@@ -87,11 +87,17 @@ const ClientForm = ({ showForm }) => {
         </div>
         <div className={ClientFormCss.col}>
           <label htmlFor="roles">User Roles</label>
-          <select name='roles' value={client.roles} onChange={handleChange}>
-            <option disabled defaultValue selected  style={{display: 'none'}} > </option>
-            <option value='Admin'>Admin</option>
-            <option value='User'>User</option>  
-            <option value='ThirdPary'>ThirdPary</option>
+          <select
+            name="roles"
+            value={client.roles ? client.roles : 'first'}
+            onChange={handleChange}
+          >
+            <option value="first" disabled style={{ display: 'none' }}>
+              {' '}
+            </option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+            <option value="ThirdPary">ThirdPary</option>
           </select>
           {/* <input
             type="text"

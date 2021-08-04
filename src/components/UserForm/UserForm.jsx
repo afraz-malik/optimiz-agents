@@ -10,7 +10,7 @@ import toast from 'cogo-toast'
 const UserForm = ({ showForm }) => {
   const dispatch = useDispatch()
 
-  const [client, setClient] = useState({
+  const [user, setUser] = useState({
     fname: '',
     lname: '',
     email: '',
@@ -21,13 +21,13 @@ const UserForm = ({ showForm }) => {
   })
 
   const handleChange = (event) => {
-    setClient({ ...client, [event.target.name]: event.target.value })
+    setUser({ ...user, [event.target.name]: event.target.value })
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(AddUserAction(client))
+    dispatch(AddUserAction(user))
     toast.success('Added Success fully')
-    setClient({
+    setUser({
       fname: '',
       lname: '',
       email: '',
@@ -45,7 +45,7 @@ const UserForm = ({ showForm }) => {
           <input
             type="text"
             name="fname"
-            value={client.fname}
+            value={user.fname}
             onChange={handleChange}
           />
         </div>
@@ -54,7 +54,7 @@ const UserForm = ({ showForm }) => {
           <input
             type="text"
             name="lname"
-            value={client.lname}
+            value={user.lname}
             onChange={handleChange}
           />
         </div>
@@ -63,25 +63,16 @@ const UserForm = ({ showForm }) => {
           <input
             type="email"
             name="email"
-            value={client.email}
+            value={user.email}
             onChange={handleChange}
           />
         </div>
-        {/* <div className={UserFormCss.col}>
-          <label htmlFor="company">Company</label>
-          <input
-            type="text"
-            name="company"
-            value={client.company}
-            onChange={handleChange}
-          />
-        </div> */}
         <div className={UserFormCss.col}>
           <label htmlFor="phone">Phone number</label>
           <input
             type="text"
             name="phone"
-            value={client.phone}
+            value={user.phone}
             onChange={handleChange}
           />
         </div>
@@ -91,23 +82,27 @@ const UserForm = ({ showForm }) => {
             type="password"
             name="password"
             autoComplete="current-password"
-            value={client.password}
+            value={user.password}
             onChange={handleChange}
           />
         </div>
         <div className={UserFormCss.col}>
           <label htmlFor="roles">User Roles</label>
-          <select name='roles' value={client.roles} onChange={handleChange}>
-            <option disabled defaultValue selected  style={{display: 'none'}} > </option>
-            <option value='Admin'>Admin</option>
-            <option value='User'>User</option>  
-            <option value='ThirdPary'>ThirdPary</option>
+          <select
+            name="roles"
+            value={user.roles ? user.roles : 'first'}
+            onChange={handleChange}
+          >
+            <option value="first" disabled style={{ display: 'none' }}></option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+            <option value="ThirdPary">ThirdPary</option>
           </select>
           {/* <input
             type="text"
             name="roles"
             autoComplete="off"
-            value={client.roles}
+            value={user.roles}
             onChange={handleChange}
           /> */}
         </div>
@@ -115,7 +110,7 @@ const UserForm = ({ showForm }) => {
       <div className={UserFormCss.buttons}>
         <button className={UserFormCss.addbtn} type="submit">
           {' '}
-          Add client
+          Add user
         </button>
         <button
           className={UserFormCss.cancel}

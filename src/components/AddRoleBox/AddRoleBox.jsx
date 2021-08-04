@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import AddRoleCss from './AddRole.module.scss'
+import AddRoleCss from './AddRoleBox.module.scss'
 import Switch from '@material-ui/core/Switch'
 import { AddRoleAction } from '../../redux/roles/roles.actions'
 import { useDispatch } from 'react-redux'
-const AddRole = ({ toggleState }) => {
+const AddRoleBox = ({ toggleState }) => {
   const dispatch = useDispatch()
   const [toggle, setToggle] = useState({
     manageAccounts: false,
@@ -222,4 +222,4 @@ const AddRole = ({ toggleState }) => {
   )
 }
 
-export default AddRole
+export default AddRoleBox
