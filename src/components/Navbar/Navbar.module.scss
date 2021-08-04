@@ -6,6 +6,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+
   margin: 10px 30px;
   //   background-color: antiquewhite;
   .leftnav {
@@ -42,7 +44,7 @@ body {
         right: 175px;
         display: none;
         /* width: 100%; */
-        top: 9px;
+        top: -3px;
         width: 150px;
         box-sizing: border-box;
         border: none;
