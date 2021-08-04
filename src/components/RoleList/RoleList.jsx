@@ -13,6 +13,10 @@ const RoleList = ({ toggleState, roles }) => {
     setSearchField({ ...searchField, value: event.target.value })
   }
   console.log(roles)
+  var keys = Object.keys(roles[0])
+  const filteredRoles = roles.filter((role) => {
+    return role.roleName.toLowerCase().includes(searchField.value.toLowerCase())
+  })
   return (
     <div className={RoleListCss.container}>
       <div className={RoleListCss.add}>
@@ -53,7 +57,7 @@ const RoleList = ({ toggleState, roles }) => {
             </tr>
           </thead>
           <tbody>
-            {roles.map((role, j) => (
+            {filteredRoles.map((role, j) => (
               <RoleListGen key={j} index={j} role={role} />
             ))}
           </tbody>

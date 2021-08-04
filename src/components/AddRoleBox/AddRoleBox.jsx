@@ -35,7 +35,7 @@ const AddRoleBox = ({ toggleState }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const roleName = document.getElementById('roleName').value
-    dispatch(AddRoleAction({ roleName, roles: toggle }))
+    dispatch(AddRoleAction({ roleName, ...toggle }))
     toggleState()
   }
 

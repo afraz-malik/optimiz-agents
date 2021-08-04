@@ -6,21 +6,21 @@ import Switch from '@material-ui/core/Switch'
 import { useDispatch } from 'react-redux'
 import { EditRoleAction } from '../../redux/roles/roles.actions'
 
-const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
-  const { roleName, roles } = role
+const EditRoleBox = ({ toggleEditBox, role, index }) => {
+  console.log(role)
   const dispatch = useDispatch()
-  const [newData, setNewData] = useState(data)
   const [toggle, setToggle] = useState({
-    manageAccounts: roles.manageAccounts,
-    manageAccountsUser: roles.manageAccountsUser,
-    accountManager: roles.accountManager,
-    createUsers: roles.createUsers,
-    deleteUsers: roles.deleteUsers,
-    performance: roles.performance,
-    analytics: roles.analytics,
-    compaigns: roles.compaigns,
-    clients: roles.clients,
-    publishers: roles.publishers,
+    roleName: role.roleName,
+    manageAccounts: role.manageAccounts,
+    manageAccountsUser: role.manageAccountsUser,
+    accountManager: role.accountManager,
+    createUsers: role.createUsers,
+    deleteUsers: role.deleteUsers,
+    performance: role.performance,
+    analytics: role.analytics,
+    compaigns: role.compaigns,
+    clients: role.clients,
+    publishers: role.publishers,
   })
   const [box, setBox] = useState({
     admin: false,
@@ -34,35 +34,34 @@ const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
     if (value === 'client') setBox({ ...box, client: !box.client })
     if (value === 'publisher') setBox({ ...box, publisher: !box.publisher })
   }
-  const handleChange = (event) => {
-    setNewData({ ...newData, [event.target.name]: event.target.value })
-  }
+
   const handleToggle = (event) => {
-    setToggle({ ...toggle, [event.target.name]: event.target.checked })
+    if (event.target.name === 'roleName') {
+      setToggle({ ...toggle, [event.target.name]: event.target.value })
+    } else {
+      setToggle({ ...toggle, [event.target.name]: event.target.checked })
+    }
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    const newRole = {
-      roleName,
-      roles: toggle,
-    }
-    dispatch(EditRoleAction({ newRole, index }))
+    dispatch(EditRoleAction({ newRole: toggle, index }))
     toggleEditBox()
   }
   return (
     <div className={EditRoleBoxCss.outerbox}>
       <div className={EditRoleBoxCss.box}>
         <div className={EditRoleBoxCss.head}>
-          <h2>Edit Roles</h2>
+          <h2>Edit role</h2>
         </div>
         <div className={EditRoleBoxCss.body}>
           <form onSubmit={handleSubmit}>
             <label>Role Name</label>
             <input
               type="text"
+              id="roleName"
               name="roleName"
-              onChange={handleChange}
-              value={roleName}
+              onChange={handleToggle}
+              value={toggle.roleName}
             />
             <div className={EditRoleBoxCss.row}>
               <div className={EditRoleBoxCss.boxmodel}>
