@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DataListCss from './DataList.module.scss'
+import DataBoxCss from './DataBox.module.scss'
 
 // Redux
 import { useDispatch } from 'react-redux'
@@ -31,7 +31,7 @@ const DataListGen = ({ data, title, index }) => {
       <td>{data.phone}</td>
       <td>{data.email}</td>
       <td>
-        <div className={DataListCss.actions}>
+        <div className={DataBoxCss.actions}>
           <img alt="" src="images/edit.svg" onClick={() => toggleEditBox()} />
           <img alt="" src="images/delete.svg" onClick={() => manageDelete()} />
           {editBox ? (

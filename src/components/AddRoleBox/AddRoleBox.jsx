@@ -3,6 +3,7 @@ import AddRoleCss from './AddRoleBox.module.scss'
 import Switch from '@material-ui/core/Switch'
 import { AddRoleAction } from '../../redux/roles/roles.actions'
 import { useDispatch } from 'react-redux'
+
 const AddRoleBox = ({ toggleState }) => {
   const dispatch = useDispatch()
   const [toggle, setToggle] = useState({
@@ -46,7 +47,7 @@ const AddRoleBox = ({ toggleState }) => {
       </div>
       <form className={AddRoleCss.form} onSubmit={handleSubmit}>
         <div className={AddRoleCss.row}>
-          <label htmlFor="fname">First Name</label>
+          <label htmlFor="roleName">Role Name</label>
           <input type="text" name="roleName" id="roleName" required />
         </div>
         <div className={AddRoleCss.row}>

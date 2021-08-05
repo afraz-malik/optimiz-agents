@@ -58,7 +58,5 @@ const RoleListGen = ({ role, index }) => {
     </tr>
   )
 }
-export const NumberGen = ({ counter }) => {
-  return <div className={RoleListCss.numbers}>{counter}</div>
-}
+
 export default RoleListGen

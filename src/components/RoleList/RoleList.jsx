@@ -2,19 +2,45 @@ import React, { useState } from 'react'
 import RoleListCss from './RoleList.module.scss'
 import { connect } from 'react-redux'
 import RoleListGen from './RoleListGen'
-import { NumberGen } from './RoleListGen'
 
 const mapStateToProps = (state) => ({
   roles: state.roleReducer.roles,
 })
 const RoleList = ({ toggleState, roles }) => {
-  const [searchField, setSearchField] = useState({ value: '' })
-  const handleChange = (event) => {
-    setSearchField({ ...searchField, value: event.target.value })
+  const [state, setState] = useState({ searchValue: '', pageNumber: 1 })
+  const handleSearch = (event) => {
+    setState({ ...state, searchValue: event.target.value })
+  }
+  const handlePage = (value) => {
+    if (value === 'back') {
+      if (state.pageNumber !== 1) {
+        setState({ ...state, pageNumber: state.pageNumber - 1 })
+      }
+      return
+    }
+    if (value === 'forward') {
+      if (state.pageNumber < totalPages) {
+        setState({ ...state, pageNumber: state.pageNumber + 1 })
+      }
+      return
+    }
+    setState({ ...state, pageNumber: value })
   }
   const filteredRoles = roles.filter((role) =>
-    role.roleName.toLowerCase().includes(searchField.value.toLowerCase())
+    role.roleName.toLowerCase().includes(state.searchValue.toLowerCase())
   )
+  const paginate = (array, page_size, page_number) => {
+    return array.slice((page_number - 1) * page_size, page_number * page_size)
+  }
+  const rowsPerPage = 5
+  let totalPages
+  const currentPageData = paginate(filteredRoles, rowsPerPage, state.pageNumber)
+  if (filteredRoles.length === 0) {
+    totalPages = 1
+  } else {
+    totalPages = Math.ceil(filteredRoles.length / rowsPerPage)
+  }
+  if (state.pageNumber > totalPages) setState({ ...state, pageNumber: 1 })
   return (
     <div className={RoleListCss.container}>
       <div className={RoleListCss.add}>
@@ -31,8 +57,8 @@ const RoleList = ({ toggleState, roles }) => {
           <input
             type="text"
             placeholder="Search for named role..."
-            onChange={handleChange}
-            value={searchField.value}
+            onChange={handleSearch}
+            value={state.searchValue}
           />
         </div>
         <div className={RoleListCss.filter}>
@@ -55,20 +81,48 @@ const RoleList = ({ toggleState, roles }) => {
             </tr>
           </thead>
           <tbody>
-            {filteredRoles.map((role, j) => (
+            {currentPageData.map((role, j) => (
               <RoleListGen key={j} index={j} role={role} />
             ))}
           </tbody>
         </table>
       </div>
       <div className={RoleListCss.pages}>
-        <div className={RoleListCss.back}>&lt;</div>
-        {[...Array(3)].map((i, j) => (
-          <NumberGen key={j} counter={j + 1} />
+        <div className={RoleListCss.back} onClick={() => handlePage('back')}>
+          &lt;
+        </div>
+        {[...Array(totalPages)].map((i, j) => (
+          <NumberGen
+            key={j}
+            counter={j + 1}
+            handlePage={handlePage}
+            pageNumber={state.pageNumber}
+          />
         ))}
-        <div className={RoleListCss.front}>&gt;</div>
+        <div
+          className={RoleListCss.front}
+          onClick={() => handlePage('forward')}
+        >
+          &gt;
+        </div>
       </div>
     </div>
   )
 }
+const NumberGen = ({ counter, handlePage, pageNumber }) => {
+  return (
+    <div
+      className={RoleListCss.numbers}
+      onClick={() => handlePage(counter)}
+      style={
+        counter === pageNumber
+          ? { background: ' #e14eca', color: 'white' }
+          : null
+      }
+    >
+      {counter}
+    </div>
+  )
+}
+
 export default connect(mapStateToProps)(RoleList)

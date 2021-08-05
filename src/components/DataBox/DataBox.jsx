@@ -2,8 +2,7 @@
 import React from 'react'
 import DataBoxCss from './DataBox.module.scss'
 // Components
-import DataList from '../DataList/DataList'
-
+import DataListGen from './DataListGen'
 class DataBox extends React.Component {
   constructor(props) {
     super(props)
@@ -12,10 +11,10 @@ class DataBox extends React.Component {
       pageNumber: 1,
     }
   }
-  totalPages = Math.ceil(this.props.data.length / 5)
+  totalPages = 1
   handlePage = (value) => {
     if (value === 'back') {
-      if (this.state.pageNumber != 1) {
+      if (this.state.pageNumber !== 1) {
         this.setState({ ...this.state, pageNumber: this.state.pageNumber - 1 })
       }
       return
@@ -28,20 +27,16 @@ class DataBox extends React.Component {
     }
     this.setState({ ...this.state, pageNumber: value })
   }
-  // const [pageNumber, setPageNumber] = useState(0)
-
   handleChange = (event) => {
     this.setState({ ...this.state, searchValue: event.target.value })
   }
   paginate = (array, page_size, page_number) => {
     return array.slice((page_number - 1) * page_size, page_number * page_size)
   }
-
   render() {
     const { data, title } = this.props
     const { searchValue, pageNumber } = this.state
-    const currentPageData = this.paginate(data, 5, pageNumber)
-    const filteredData = currentPageData.filter((data) => {
+    const filteredData = data.filter((data) => {
       return (
         data.fname.toLowerCase().includes(searchValue.toLowerCase()) ||
         data.lname.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -49,6 +44,14 @@ class DataBox extends React.Component {
         data.email.toLowerCase().includes(searchValue.toLowerCase())
       )
     })
+    if (this.state.pageNumber > this.totalPages)
+      this.setState({ ...this.state, pageNumber: 1 })
+    if (filteredData.length === 0) {
+      this.totalPages = 1
+    } else {
+      this.totalPages = Math.ceil(filteredData.length / 5)
+    }
+    const currentPageData = this.paginate(filteredData, 5, pageNumber)
 
     return (
       <div className={DataBoxCss.database}>
@@ -79,7 +82,24 @@ class DataBox extends React.Component {
             <h5>Export</h5>
           </div>
         </div>
-        <DataList title={title} data={filteredData} />
+        <div className={DataBoxCss.table}>
+          <table>
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>COMPANY</th>
+                <th>PHONE NUMBER</th>
+                <th>EMAIL</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentPageData.map((data, j) => (
+                <DataListGen key={j} title={title} index={j} data={data} />
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className={DataBoxCss.pages}>
           <div
             className={DataBoxCss.back}

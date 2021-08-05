@@ -6,10 +6,10 @@ import Switch from '@material-ui/core/Switch'
 import { useDispatch } from 'react-redux'
 import { EditRoleAction } from '../../redux/roles/roles.actions'
 
-const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
+const EditRoleBox = ({ toggleEditBox, role, index }) => {
   const { roleName, roles } = role
   const dispatch = useDispatch()
-  const [newData, setNewData] = useState(data)
+  const [newRoleName, setNewRoleName] = useState({ roleName: roleName })
   const [toggle, setToggle] = useState({
     manageAccounts: roles.manageAccounts,
     manageAccountsUser: roles.manageAccountsUser,
@@ -35,7 +35,7 @@ const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
     if (value === 'publisher') setBox({ ...box, publisher: !box.publisher })
   }
   const handleChange = (event) => {
-    setNewData({ ...newData, [event.target.name]: event.target.value })
+    setNewRoleName({ ...newRoleName, [event.target.name]: event.target.value })
   }
   const handleToggle = (event) => {
     setToggle({ ...toggle, [event.target.name]: event.target.checked })
@@ -43,7 +43,7 @@ const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const newRole = {
-      roleName,
+      roleName: newRoleName.roleName,
       roles: toggle,
     }
     dispatch(EditRoleAction({ newRole, index }))
@@ -62,7 +62,7 @@ const EditRoleBox = ({ toggleEditBox, role, data, index }) => {
               type="text"
               name="roleName"
               onChange={handleChange}
-              value={roleName}
+              value={newRoleName.roleName}
             />
             <div className={EditRoleBoxCss.row}>
               <div className={EditRoleBoxCss.boxmodel}>
