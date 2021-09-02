@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 // Router
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 // Pages
 import ClientWhite from './pages/ClientWhite/ClientWhite'
 import UserManagement from './pages/UserManagement/UserManagement'
@@ -10,7 +10,7 @@ import Roles from './pages/Roles/Roles'
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <span> Pages: </span>
         <Link className="a" to="/clients">
           Clients
